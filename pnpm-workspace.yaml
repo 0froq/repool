@@ -1,2 +1,48 @@
+minimumReleaseAgeExcludePrune: true
+
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - semver@6.3.1
+
+shellEmulator: true
+
+packages:
+  - .
+
+overrides:
+  # cssnano 9 dropped the staged-publish evidence required by trustPolicy.
+  # Keep Nuxt 4.6.1 while retaining the previously trusted CSS minifier.
+  '@nuxt/vite-builder@4.6.1>cssnano': 8.0.10
+  vite@*: npm:@voidzero-dev/vite-plus-core@1.3.0
+  vitest@*: 5.0.5
+
 allowBuilds:
   esbuild: true
+  simple-git-hooks: true
+  unrs-resolver: true
+  vue-demi: true
+  workerd: true
+
+catalog: { jiti: 2.7.0 }
+
+catalogs:
+  dev:
+    '@types/node': 26.6.2
+    '@unocss/nuxt': ^66.7.5
+    '@unocss/preset-attributify': ^66.7.5
+    '@unocss/preset-tagify': ^66.7.5
+    '@unocss/preset-typography': ^66.7.5
+    '@unocss/preset-wind4': ^66.7.5
+    '@unocss/transformer-directives': ^66.7.5
+    '@unocss/transformer-variant-group': ^66.7.5
+    lint-staged: ^16.1.6
+    simple-git-hooks: ^2.14.0
+    typescript: ~5.9.3
+    unocss: ^66.7.5
+    vite-plus: 1.3.0
+    vue-tsc: ^3.3.11
+  prod:
+    '@vueuse/core': ^14.4.0
+    '@vueuse/nuxt': ^14.4.0
+    nuxt: ^4.6.1
+    vue: ^3.5.43
