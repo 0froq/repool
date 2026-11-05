@@ -1,0 +1,54 @@
+{
+  "name": "repool",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "vp lint --config .oxlintrc.json .",
+    "lint:fix": "vp lint --config .oxlintrc.json . --fix",
+    "fmt": "vp fmt --config .oxfmtrc.json .",
+    "fmt:check": "vp fmt --config .oxfmtrc.json . --check",
+    "check": "vp run lint && vp run fmt:check && vp run typecheck",
+    "typecheck": "nuxt typecheck",
+    "postinstall": "nuxt prepare",
+    "prepare": "npx simple-git-hooks"
+  },
+  "dependencies": {
+    "@vueuse/nuxt": "catalog:prod",
+    "nuxt": "catalog:prod",
+    "vue": "catalog:prod"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:dev",
+    "@unocss/nuxt": "catalog:dev",
+    "@unocss/preset-attributify": "catalog:dev",
+    "@unocss/preset-tagify": "catalog:dev",
+    "@unocss/preset-typography": "catalog:dev",
+    "@unocss/preset-wind4": "catalog:dev",
+    "@unocss/transformer-directives": "catalog:dev",
+    "@unocss/transformer-variant-group": "catalog:dev",
+    "lint-staged": "catalog:dev",
+    "simple-git-hooks": "catalog:dev",
+    "typescript": "catalog:dev",
+    "unocss": "catalog:dev",
+    "vite-plus": "catalog:dev",
+    "vue-tsc": "catalog:dev"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "vp lint --config .oxlintrc.json --fix --no-error-on-unmatched-pattern",
+      "vp fmt --config .oxfmtrc.json --no-error-on-unmatched-pattern"
+    ]
+  },
+  "engines": {
+    "node": "^24.21.0 || >=26.0.0"
+  },
+  "packageManager": "pnpm@12.11.2"
+}
