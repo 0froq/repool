@@ -5,5 +5,13 @@
   "quoteProps": "consistent",
   "singleAttributePerLine": true,
   "htmlWhitespaceSensitivity": "strict",
-  "ignorePatterns": [".nuxt/**", ".output/**", "dist/**", "public/**", "pnpm-lock.yaml"]
+  "ignorePatterns": [
+    ".nuxt/**",
+    ".output/**",
+    "dist/**",
+    "public/**",
+    "pnpm-lock.yaml",
+    "vendor/ui/**",
+    "AGENTS.md"
+  ]
 }

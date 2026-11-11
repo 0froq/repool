@@ -3,5 +3,5 @@
   "categories": {
     "correctness": "error"
   },
-  "ignorePatterns": [".nuxt/**", ".output/**", "dist/**"]
+  "ignorePatterns": [".nuxt/**", ".output/**", "dist/**", "vendor/ui/**"]
 }
