@@ -21,6 +21,13 @@ export default defineConfig({
     }),
     presetTypography(),
   ],
+  // Keys named like a token (meta, text, display) would emit a self-referencing var and void it.
+  theme: {
+    font: {
+      sans: 'var(--font-text)',
+      mono: 'var(--font-meta)',
+    },
+  },
   transformers: [transformerDirectives(), transformerVariantGroup()],
   layers: {
     default: 0,

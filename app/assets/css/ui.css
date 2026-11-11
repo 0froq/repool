@@ -1,0 +1,50 @@
+/* Consumer bridge: the site owns colors and fonts; the library owns controls. */
+.ui {
+  --ui-bg: var(--bg);
+  --ui-fg: var(--fg);
+  --ui-muted: var(--muted);
+  --ui-faint: var(--faint);
+  --ui-line: var(--line);
+  --ui-accent: var(--accent);
+  --ui-font-display: var(--font-display);
+  --ui-font-text: var(--font-text);
+  --ui-font-meta: var(--font-meta);
+  --ui-ease: var(--ease);
+  --ui-dur: 0.35s;
+  --ui-radius: 2px;
+}
+
+/* Menu skin, in the lig dialect: hairline frame, no shadow, plain rows.
+   This lives here rather than in a component because the library portals the
+   sheet into `.ui`, outside any component's scope. */
+.repool-menu.ui-menu-content {
+  min-width: 13rem;
+  max-height: min(70vh, 32rem);
+  overflow-y: auto;
+  padding: 4px 0;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  box-shadow: none;
+  color: var(--fg);
+  font: 11px/1.3 var(--font-meta);
+}
+
+.repool-menu .ui-menu-item {
+  justify-content: space-between;
+  gap: 24px;
+  padding: 8px 16px;
+  font-size: 12.5px;
+}
+
+.repool-menu-count {
+  color: var(--muted);
+  font-family: var(--font-meta);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.repool-menu .ui-menu-separator {
+  margin: 4px 0;
+  background: var(--line);
+}

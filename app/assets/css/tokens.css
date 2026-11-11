@@ -1,0 +1,91 @@
+/* Palette and type stacks follow @froq/ui tokens (ui/src/tokens.css) and the osdash/lig skin. */
+:root {
+  --bg: #f4f2ec;
+  --fg: #1a1917;
+  --muted: #85837c;
+  --faint: #cfccc3;
+  --line: rgba(26, 25, 23, 0.12);
+  --card: #fbfaf6;
+  --accent: #e8431f;
+  --good: #38964d;
+  --info: #009392;
+  --soft: color-mix(in oklab, var(--fg) 4%, transparent);
+  --soft-2: color-mix(in oklab, var(--fg) 7%, transparent);
+  --font-display:
+    'Instrument Serif', 'Iowan Old Style', Georgia, 'Songti SC', 'Noto Serif SC', serif;
+  --font-text:
+    'Geist Variable', 'Geist', ui-sans-serif, system-ui, -apple-system, 'PingFang SC',
+    'Hiragino Sans GB', 'Noto Sans SC', sans-serif;
+  --font-meta: 'Geist Mono Variable', 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 140ms;
+  --dur-2: 240ms;
+  --dur-3: 420ms;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #111113;
+  --fg: #f2f0ea;
+  --muted: #918f88;
+  --faint: #32312d;
+  --line: rgba(242, 240, 234, 0.1);
+  --card: #18181a;
+  --accent: #ff6242;
+  --good: #73c07f;
+  --info: #26c2c1;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--fg) 30%, transparent) transparent;
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-text);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 2px;
+}
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
